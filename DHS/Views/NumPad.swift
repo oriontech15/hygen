@@ -35,7 +35,7 @@ class NumPad: UIView {
             }
         } else {
             let text = totalLabel.text ?? "0"
-            let newValue = text[..<text.index(before: text.endIndex)]
+            let newValue = text.substring(to: text.index(before: text.endIndex))
             totalLabel.text = String(describing: newValue)
         }
     }

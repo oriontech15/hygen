@@ -578,12 +578,12 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
             let font: UIFont? = UIFont(name: "Comfortaa-Regular", size: 18.0)
             let attrString = NSMutableAttributedString(
                 string: "Patient Completed",
-                attributes: [NSAttributedStringKey.font : font!])
+                attributes: [NSFontAttributeName : font!])
             
             let font1: UIFont? = UIFont(name: "Comfortaa-Regular", size: 10.0)
             let attrString1 = NSMutableAttributedString(
                 string: "\n(tap again to edit patient)",
-                attributes: [NSAttributedStringKey.font : font1!])
+                attributes: [NSFontAttributeName : font1!])
             
             //appending both attributed strings
             attrString.append(attrString1)

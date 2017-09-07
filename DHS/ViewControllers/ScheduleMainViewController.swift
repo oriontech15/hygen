@@ -12,7 +12,7 @@ protocol TodayButtonDelegate {
     func todayButtonTapped()
 }
 
-class ScheduleMainViewController: UIViewController, CalendarUpdatedDelegate {
+class ScheduleMainViewController: UIViewController /*CalendarUpdatedDelegate*/ {
 
     @IBOutlet weak var toggleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentDayButton: UIBarButtonItem!
