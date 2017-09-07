@@ -37,6 +37,13 @@ class ProgressSwitcherViewController: UIViewController {
     @IBOutlet weak var paNumbersProgressLabel: UILabel!
     @IBOutlet weak var injectionNumbersProgressLabel: UILabel!
     
+    @IBOutlet weak var class1ANameLabel: UILabel!
+    @IBOutlet weak var class1BNameLabel: UILabel!
+    @IBOutlet weak var class2NameLabel: UILabel!
+    @IBOutlet weak var class3NameLabel: UILabel!
+    @IBOutlet weak var class4NameLabel: UILabel!
+    @IBOutlet weak var class5NameLabel: UILabel!
+    
     @IBOutlet var tabButtons: [UIButton]!
     
     override func viewDidLoad() {
@@ -61,6 +68,51 @@ class ProgressSwitcherViewController: UIViewController {
                 button.setNeedsDisplay()
             }
         }
+        
+        adjustViewLayout(size: UIScreen.main.bounds.size)
+    }
+    
+    func adjustViewLayout(size: CGSize) {
+        switch(size.width, size.height) {
+        case (320, 480):                        // iPhone 4S in portrait
+            break
+        case (480, 320):                        // iPhone 4S in landscape
+            break
+        case (320, 568):                        // iPhone 5/5S in portrait
+            self.class1ANameLabel.text = "1A"
+            self.class1BNameLabel.text = "1B"
+            self.class2NameLabel.text = "2"
+            self.class3NameLabel.text = "3"
+            self.class4NameLabel.text = "4"
+            self.class5NameLabel.text = "5"
+            
+            self.class1ANameLabel.textAlignment = .center
+            self.class1BNameLabel.textAlignment = .center
+            self.class2NameLabel.textAlignment = .center
+            self.class3NameLabel.textAlignment = .center
+            self.class4NameLabel.textAlignment = .center
+            self.class5NameLabel.textAlignment = .center
+            break
+        case (568, 320):                        // iPhone 5/5S in landscape
+            break
+        case (375, 667):                        // iPhone 6 in portrait
+            self.class1ANameLabel.text = "Class 1A"
+            self.class1BNameLabel.text = "Class 1B"
+            self.class2NameLabel.text = "Class 2"
+            self.class3NameLabel.text = "Class 3"
+            self.class4NameLabel.text = "Class 4"
+            self.class5NameLabel.text = "Class 5"
+            break
+        case (667, 375):                        // iPhone 6 in landscape
+            break
+        case (414, 736):                        // iPhone 6 Plus in portrait
+            break
+        case (736, 414):                        // iphone 6 Plus in landscape
+            break
+        default:
+            break
+        }
+        view.setNeedsLayout()
     }
     
     func updateProgress() {

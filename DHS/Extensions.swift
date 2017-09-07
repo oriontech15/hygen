@@ -187,3 +187,9 @@ extension NSDate {
         return a.compare(b as Date) == ComparisonResult.orderedAscending
     }
 }
+
+extension NSSet {
+    var toXrays: [Xray] {
+        return self.allObjects as? [Xray] ?? []
+    }
+}

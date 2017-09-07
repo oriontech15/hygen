@@ -53,17 +53,17 @@ class ScheduleMainViewController: UIViewController, CalendarUpdatedDelegate {
     }
     
     var currentViewController: UIViewController?
-    lazy var firstChildTabVC: UIViewController? = {
-        let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "calendarVC") as? CalendarViewController
-        self.delegate = firstChildTabVC
-        firstChildTabVC?.delegate = self
-        return firstChildTabVC
+    lazy var secondChildTabVC: UIViewController? = {
+        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "calendarVC")
+//        self.delegate = secondChildTabVC
+//        secondChildTabVC?.delegate = self
+        return secondChildTabVC
     }()
     
-    lazy var secondChildTabVC : UIViewController? = {
-        let secondChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "listVC") as? ScheduleTableViewController
-        
-        return secondChildTabVC
+    lazy var firstChildTabVC : UIViewController? = {
+        let firstChildTabVC = self.storyboard?.instantiateViewController(withIdentifier: "listVC") as? ScheduleTableViewController
+        firstChildTabVC?.firstLoad = true
+        return firstChildTabVC
     }()
     
     // MARK: - View Controller Lifecycle
@@ -98,6 +98,9 @@ class ScheduleMainViewController: UIViewController, CalendarUpdatedDelegate {
             vc.didMove(toParentViewController: self)
             
             vc.view.frame = self.contentView.bounds
+            if let scheduleVC = vc as? ScheduleTableViewController {
+                scheduleVC.firstLoad = true
+            }
             self.contentView.addSubview(vc.view)
             self.currentViewController = vc
         }

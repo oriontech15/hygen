@@ -17,6 +17,7 @@ class CustomButton: UIButton {
     }
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true
     }

@@ -52,12 +52,12 @@ class QuadsTableViewCell: UITableViewCell, UITextFieldDelegate, CheckQuadsDataDe
         self.quadsTextField.inputAccessoryView = doneToolbar
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.quadsTextField.resignFirstResponder()
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         if let quads = Int(textField.text!) {
             self.delegate?.quadsUpdated(quads: quads)
         }

@@ -55,6 +55,11 @@ class ColorButton: UIButton {
         setupButton()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = self.frame.height / 2.0
+    }
+    
     func notSelected() {
         self.layer.borderWidth = 0
     }
@@ -69,7 +74,7 @@ class ColorButton: UIButton {
     }
     
     func setupButton() {
-        self.layer.cornerRadius = self.bounds.height / 2
+        self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = true
         switch colorID {
         case 0:

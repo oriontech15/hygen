@@ -1014,13 +1014,13 @@ class StyleKit: NSObject {
             
             /// 1A
             let _1A = NSMutableAttributedString(string: "1A")
-            _1A.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _1A.length))
-            _1A.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _1A.length))
-            _1A.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _1A.length))
+            _1A.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _1A.length))
+            _1A.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _1A.length))
+            _1A.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _1A.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _1A.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _1A.length))
+                _1A.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _1A.length))
             }
             context.saveGState()
             _1A.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1028,13 +1028,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 4, y: 11, width: 73.27, height: 16))
@@ -1123,13 +1123,13 @@ class StyleKit: NSObject {
             
             /// 5
             let _5 = NSMutableAttributedString(string: "5")
-            _5.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _5.length))
-            _5.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: _5.length))
-            _5.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _5.length))
+            _5.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _5.length))
+            _5.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: _5.length))
+            _5.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _5.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _5.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _5.length))
+                _5.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _5.length))
             }
             context.saveGState()
             _5.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1137,13 +1137,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 5, y: 11, width: 73.27, height: 16))
@@ -1232,13 +1232,13 @@ class StyleKit: NSObject {
             
             /// 2
             let _2 = NSMutableAttributedString(string: "2")
-            _2.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _2.length))
-            _2.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _2.length))
-            _2.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _2.length))
+            _2.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _2.length))
+            _2.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _2.length))
+            _2.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _2.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _2.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _2.length))
+                _2.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _2.length))
             }
             context.saveGState()
             _2.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1246,13 +1246,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 5, y: 11, width: 73.27, height: 16))
@@ -1341,13 +1341,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 5, y: 11, width: 73.27, height: 16))
@@ -1355,13 +1355,13 @@ class StyleKit: NSObject {
             
             /// 3
             let _3 = NSMutableAttributedString(string: "3")
-            _3.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _3.length))
-            _3.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _3.length))
-            _3.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _3.length))
+            _3.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _3.length))
+            _3.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _3.length))
+            _3.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _3.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _3.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _3.length))
+                _3.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _3.length))
             }
             context.saveGState()
             _3.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1450,13 +1450,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 5, y: 11, width: 73.27, height: 16))
@@ -1464,13 +1464,13 @@ class StyleKit: NSObject {
             
             /// 4
             let _4 = NSMutableAttributedString(string: "4")
-            _4.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _4.length))
-            _4.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _4.length))
-            _4.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _4.length))
+            _4.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _4.length))
+            _4.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _4.length))
+            _4.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _4.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _4.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _4.length))
+                _4.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _4.length))
             }
             context.saveGState()
             _4.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1559,13 +1559,13 @@ class StyleKit: NSObject {
             
             /// 1B
             let _1B = NSMutableAttributedString(string: "1B")
-            _1B.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _1B.length))
-            _1B.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _1B.length))
-            _1B.addAttribute(NSKernAttributeName, value: -0.19, range: NSRange(location: 0, length: _1B.length))
+            _1B.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 8)!, range: NSRange(location: 0, length: _1B.length))
+            _1B.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: _1B.length))
+            _1B.addAttribute(NSAttributedStringKey.kern, value: -0.19, range: NSRange(location: 0, length: _1B.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                _1B.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _1B.length))
+                _1B.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _1B.length))
             }
             context.saveGState()
             _1B.draw(in: CGRect(x: 77, y: 13, width: 11.73, height: 11))
@@ -1573,13 +1573,13 @@ class StyleKit: NSObject {
             
             /// Complete
             let complete = NSMutableAttributedString(string: "Complete")
-            complete.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
-            complete.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 12)!, range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: complete.length))
+            complete.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: complete.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                complete.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
+                complete.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: complete.length))
             }
             context.saveGState()
             complete.draw(in: CGRect(x: 5, y: 11, width: 73.27, height: 16))
@@ -4357,12 +4357,12 @@ class StyleKit: NSObject {
             
             /// CAL
             let cAL = NSMutableAttributedString(string: "CAL")
-            cAL.addAttribute(NSFontAttributeName, value: UIFont(name: "EurostileBold", size: 13)!, range: NSRange(location: 0, length: cAL.length))
-            cAL.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: cAL.length))
+            cAL.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "EurostileBold", size: 13)!, range: NSRange(location: 0, length: cAL.length))
+            cAL.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: cAL.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                cAL.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: cAL.length))
+                cAL.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: cAL.length))
             }
             context.saveGState()
             cAL.draw(in: CGRect(x: 26.22, y: 23, width: 26.55, height: 18))
@@ -4946,13 +4946,13 @@ class StyleKit: NSObject {
             
             /// Class 5
             let class5 = NSMutableAttributedString(string: "Class 5")
-            class5.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class5.length))
-            class5.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: class5.length))
-            class5.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class5.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class5.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class5.length))
+                class5.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class5.length))
             }
             context.saveGState()
             class5.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5018,13 +5018,13 @@ class StyleKit: NSObject {
             
             /// Class 1A
             let class1A = NSMutableAttributedString(string: "Class 1A")
-            class1A.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1A.length))
-            class1A.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class1A.length))
-            class1A.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class1A.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class1A.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class1A.length))
+                class1A.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class1A.length))
             }
             context.saveGState()
             class1A.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5090,13 +5090,13 @@ class StyleKit: NSObject {
             
             /// Class 3
             let class3 = NSMutableAttributedString(string: "Class 3")
-            class3.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class3.length))
-            class3.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class3.length))
-            class3.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class3.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class3.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class3.length))
+                class3.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class3.length))
             }
             context.saveGState()
             class3.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5162,13 +5162,13 @@ class StyleKit: NSObject {
             
             /// Class 2
             let class2 = NSMutableAttributedString(string: "Class 2")
-            class2.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class2.length))
-            class2.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class2.length))
-            class2.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class2.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class2.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class2.length))
+                class2.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class2.length))
             }
             context.saveGState()
             class2.draw(in: CGRect(x: 11, y: 8, width: 73.27, height: 18))
@@ -5234,13 +5234,13 @@ class StyleKit: NSObject {
             
             /// Class 1B
             let class1B = NSMutableAttributedString(string: "Class 1B")
-            class1B.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1B.length))
-            class1B.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class1B.length))
-            class1B.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class1B.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class1B.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class1B.length))
+                class1B.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class1B.length))
             }
             context.saveGState()
             class1B.draw(in: CGRect(x: 9, y: 8, width: 73.27, height: 18))
@@ -5306,13 +5306,13 @@ class StyleKit: NSObject {
             
             /// Class 4
             let class4 = NSMutableAttributedString(string: "Class 4")
-            class4.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class4.length))
-            class4.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class4.length))
-            class4.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class4.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class4.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class4.length))
+                class4.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class4.length))
             }
             context.saveGState()
             class4.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5375,13 +5375,13 @@ class StyleKit: NSObject {
             
             /// Class 5
             let class5 = NSMutableAttributedString(string: "Class 5")
-            class5.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class5.length))
-            class5.addAttribute(NSForegroundColorAttributeName, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: class5.length))
-            class5.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(white: 0.184, alpha: 1), range: NSRange(location: 0, length: class5.length))
+            class5.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class5.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class5.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class5.length))
+                class5.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class5.length))
             }
             context.saveGState()
             class5.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5444,13 +5444,13 @@ class StyleKit: NSObject {
             
             /// Class 1A
             let class1A = NSMutableAttributedString(string: "Class 1A")
-            class1A.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1A.length))
-            class1A.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class1A.length))
-            class1A.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class1A.length))
+            class1A.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class1A.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class1A.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class1A.length))
+                class1A.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class1A.length))
             }
             context.saveGState()
             class1A.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5513,13 +5513,13 @@ class StyleKit: NSObject {
             
             /// Class 3
             let class3 = NSMutableAttributedString(string: "Class 3")
-            class3.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class3.length))
-            class3.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class3.length))
-            class3.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class3.length))
+            class3.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class3.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class3.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class3.length))
+                class3.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class3.length))
             }
             context.saveGState()
             class3.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -5582,13 +5582,13 @@ class StyleKit: NSObject {
             
             /// Class 2
             let class2 = NSMutableAttributedString(string: "Class 2")
-            class2.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class2.length))
-            class2.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class2.length))
-            class2.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class2.length))
+            class2.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class2.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class2.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class2.length))
+                class2.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class2.length))
             }
             context.saveGState()
             class2.draw(in: CGRect(x: 11, y: 8, width: 73.27, height: 18))
@@ -5651,13 +5651,13 @@ class StyleKit: NSObject {
             
             /// Class 1B
             let class1B = NSMutableAttributedString(string: "Class 1B")
-            class1B.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1B.length))
-            class1B.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class1B.length))
-            class1B.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class1B.length))
+            class1B.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class1B.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class1B.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class1B.length))
+                class1B.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class1B.length))
             }
             context.saveGState()
             class1B.draw(in: CGRect(x: 9, y: 8, width: 73.27, height: 18))
@@ -5720,13 +5720,13 @@ class StyleKit: NSObject {
             
             /// Class 4
             let class4 = NSMutableAttributedString(string: "Class 4")
-            class4.addAttribute(NSFontAttributeName, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class4.length))
-            class4.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: class4.length))
-            class4.addAttribute(NSKernAttributeName, value: -0.24, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "ArialRoundedMTBold", size: 13.98)!, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: class4.length))
+            class4.addAttribute(NSAttributedStringKey.kern, value: -0.24, range: NSRange(location: 0, length: class4.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                class4.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: class4.length))
+                class4.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: class4.length))
             }
             context.saveGState()
             class4.draw(in: CGRect(x: 10, y: 8, width: 73.27, height: 18))
@@ -7436,9 +7436,9 @@ class StyleKit: NSObject {
             
             /// Pano
             let pano = NSMutableAttributedString(string: "Pano")
-            pano.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: pano.length))
-            pano.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: pano.length))
-            pano.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: pano.length))
+            pano.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: pano.length))
+            pano.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: pano.length))
+            pano.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: pano.length))
             context.saveGState()
             pano.draw(in: CGRect(x: 19, y: 13, width: 73, height: 36))
             context.restoreGState()
@@ -7503,11 +7503,11 @@ class StyleKit: NSObject {
                 
                 /// 66%
                 let _66 = NSMutableAttributedString(string: "66%")
-                _66.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _66.length))
+                _66.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _66.length))
                 do {
                     let paragraphStyle = NSMutableParagraphStyle()
                     paragraphStyle.alignment = .center
-                    _66.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _66.length))
+                    _66.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _66.length))
                 }
                 context.saveGState()
                 _66.draw(in: CGRect(x: 12, y: 25, width: 54.84, height: 31))
@@ -7568,9 +7568,9 @@ class StyleKit: NSObject {
             
             /// BWX
             let bWX = NSMutableAttributedString(string: "BWX")
-            bWX.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: bWX.length))
-            bWX.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: bWX.length))
-            bWX.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: bWX.length))
+            bWX.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: bWX.length))
+            bWX.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: bWX.length))
+            bWX.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: bWX.length))
             context.saveGState()
             bWX.draw(in: CGRect(x: 19, y: 13, width: 73, height: 36))
             context.restoreGState()
@@ -7635,11 +7635,11 @@ class StyleKit: NSObject {
                 
                 /// 66%
                 let _6 = NSMutableAttributedString(string: "66%")
-                _6.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _6.length))
+                _6.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _6.length))
                 do {
                     let paragraphStyle = NSMutableParagraphStyle()
                     paragraphStyle.alignment = .center
-                    _6.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _6.length))
+                    _6.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _6.length))
                 }
                 context.saveGState()
                 _6.draw(in: CGRect(x: 12, y: 25, width: 54.84, height: 31))
@@ -7700,9 +7700,9 @@ class StyleKit: NSObject {
             
             /// PA
             let pA = NSMutableAttributedString(string: "PA")
-            pA.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: pA.length))
-            pA.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: pA.length))
-            pA.addAttribute(NSKernAttributeName, value: -0.21, range: NSRange(location: 0, length: pA.length))
+            pA.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Bold", size: 24)!, range: NSRange(location: 0, length: pA.length))
+            pA.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hue: 0.905, saturation: 0, brightness: 0.138, alpha: 1), range: NSRange(location: 0, length: pA.length))
+            pA.addAttribute(NSAttributedStringKey.kern, value: -0.21, range: NSRange(location: 0, length: pA.length))
             context.saveGState()
             pA.draw(in: CGRect(x: 19, y: 13, width: 73, height: 36))
             context.restoreGState()
@@ -7767,11 +7767,11 @@ class StyleKit: NSObject {
                 
                 /// 66%
                 let _7 = NSMutableAttributedString(string: "66%")
-                _7.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _7.length))
+                _7.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _7.length))
                 do {
                     let paragraphStyle = NSMutableParagraphStyle()
                     paragraphStyle.alignment = .center
-                    _7.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _7.length))
+                    _7.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _7.length))
                 }
                 context.saveGState()
                 _7.draw(in: CGRect(x: 12, y: 25, width: 54.84, height: 31))
@@ -7899,11 +7899,11 @@ class StyleKit: NSObject {
                 
                 /// 66%
                 let _8 = NSMutableAttributedString(string: "66%")
-                _8.addAttribute(NSFontAttributeName, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _8.length))
+                _8.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Comfortaa-Regular", size: 20)!, range: NSRange(location: 0, length: _8.length))
                 do {
                     let paragraphStyle = NSMutableParagraphStyle()
                     paragraphStyle.alignment = .center
-                    _8.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: _8.length))
+                    _8.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: _8.length))
                 }
                 context.saveGState()
                 _8.draw(in: CGRect(x: 12, y: 25, width: 54.84, height: 31))

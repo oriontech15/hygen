@@ -56,7 +56,7 @@ class NotesTableViewCell: UITableViewCell, UITextViewDelegate, CheckNotesDataDel
         self.notesTextView.inputAccessoryView = doneToolbar
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.notesTextView.resignFirstResponder()
     }

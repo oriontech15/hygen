@@ -79,86 +79,8 @@ class PatientsController {
         }
     }
     
-    func updatePatientXRays(patient: Patient, xray: Bool, requirement: xRayRequirement?, type: xRayType?, paNumber: Int?, sets: Int?) {
-        if xray {
-            patient.xrays = true
-            if let requirement = requirement, let type = type {
-                switch requirement {
-                case .pano:
-                    patient.panoXRay = true
-                    patient.bwx = false
-                    patient.pa = false
-                    switch type {
-                    case .cbct:
-                        patient.cbct = true
-                        patient.schick = false
-                        patient.scanX = false
-                        break
-                    case .schick:
-                        patient.cbct = false
-                        patient.schick = true
-                        patient.scanX = false
-                        break
-                    case .scanX:
-                        patient.cbct = false
-                        patient.schick = false
-                        patient.scanX = true
-                        break
-                    }
-                    break
-                case .bwx:
-                    guard let set = sets else { return }
-                    patient.panoXRay = false
-                    patient.bwx = true
-                    patient.pa = false
-                    patient.bwxSets = Int16(set)
-                    switch type {
-                    case .cbct:
-                        patient.cbct = true
-                        patient.schick = false
-                        patient.scanX = false
-                        break
-                    case .schick:
-                        patient.cbct = false
-                        patient.schick = true
-                        patient.scanX = false
-                        break
-                    case .scanX:
-                        patient.cbct = false
-                        patient.schick = false
-                        patient.scanX = true
-                        break
-                    }
-                    break
-                case .pa:
-                    guard let paNum = paNumber else { return }
-                    patient.panoXRay = false
-                    patient.bwx = false
-                    patient.pa = true
-                    patient.paNumber = Int64(paNum)
-                    switch type {
-                    case .cbct:
-                        patient.cbct = true
-                        patient.schick = false
-                        patient.scanX = false
-                        break
-                    case .schick:
-                        patient.cbct = false
-                        patient.schick = true
-                        patient.scanX = false
-                        break
-                    case .scanX:
-                        patient.cbct = false
-                        patient.schick = false
-                        patient.scanX = true
-                        break
-                    }
-                    break
-                }
-            }
-        } else {
-            patient.xrays = false
-        }
+    func updatePatientXRays(patient: Patient, xray: Xray) {
+        patient.addToXrays(xray)
         Stack.sharedStack.save()
     }
     
@@ -209,22 +131,26 @@ class PatientsController {
         
         var patients: [Patient] = []
         for patient in self.patients {
-            switch xrayType {
-            case .pano:
-                if patient.panoXRay == true {
-                    patients.append(patient)
+            if let xrays = patient.xrays?.toXrays {
+                for xray in xrays {
+                    switch xrayType {
+                    case .pano:
+                        if xray.pano == true {
+                            patients.append(patient)
+                        }
+                        break
+                    case .bwx:
+                        if xray.bwx == true {
+                            patients.append(patient)
+                        }
+                        break
+                    case .pa:
+                        if xray.pa == true {
+                            patients.append(patient)
+                        }
+                        break
+                    }
                 }
-                break
-            case .bwx:
-                if patient.bwx == true {
-                    patients.append(patient)
-                }
-                break
-            case .pa:
-                if patient.pa == true {
-                    patients.append(patient)
-                }
-                break
             }
         }
         completion(patients)

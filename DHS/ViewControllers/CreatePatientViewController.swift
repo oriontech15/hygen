@@ -20,6 +20,8 @@ class CreatePatientViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var createButton: CustomButton!
     
+    @IBOutlet weak var viewCenterYConstraint: NSLayoutConstraint!
+    
     @IBOutlet var classButtons: [ClassSelectButton]!
     
     var date: Date?
@@ -44,6 +46,35 @@ class CreatePatientViewController: UIViewController, UITextFieldDelegate {
         createButton.backgroundColor = AppearanceController.shared.mainColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        adjustViewLayout(size: UIScreen.main.bounds.size)
+    }
+    
+    func adjustViewLayout(size: CGSize) {
+        switch(size.width, size.height) {
+        case (320, 480):                        // iPhone 4S in portrait
+            viewCenterYConstraint.constant = 0
+        case (480, 320):                        // iPhone 4S in landscape
+            viewCenterYConstraint.constant = 0
+        case (320, 568):                        // iPhone 5/5S in portrait
+            viewCenterYConstraint.constant = 40
+        case (568, 320):                        // iPhone 5/5S in landscape
+            viewCenterYConstraint.constant = 0
+        case (375, 667):                        // iPhone 6 in portrait
+            viewCenterYConstraint.constant = 0
+        case (667, 375):                        // iPhone 6 in landscape
+            viewCenterYConstraint.constant = 0
+        case (414, 736):                        // iPhone 6 Plus in portrait
+            viewCenterYConstraint.constant = 0
+        case (736, 414):                        // iphone 6 Plus in landscape
+            viewCenterYConstraint.constant = 0
+        default:
+            break
+        }
+        view.setNeedsLayout()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,10 +82,17 @@ class CreatePatientViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func classButtonSelected(sender: UIButton) {
         let previousIndex = selectedIndex
-        selectedIndex = sender.tag
+        if classButtons[previousIndex].tag == classButtons[selectedIndex].tag {
+            classButtons[previousIndex].notSelected()
+        }
         
-        classButtons[previousIndex].notSelected()
-        classButtons[selectedIndex].selected()
+        selectedIndex = sender.tag
+
+        if classButtons[selectedIndex].tag == sender.tag {
+            classButtons[selectedIndex].selected()
+        }
+        //classButtons[previousIndex].notSelected()
+        //classButtons[selectedIndex].selected()
         didSelectClass = true
     }
     

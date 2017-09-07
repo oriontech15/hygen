@@ -55,12 +55,12 @@ class InjectionsTableViewCell: UITableViewCell, UITextFieldDelegate, CheckInject
         self.injectionsTextField.inputAccessoryView = doneToolbar
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.injectionsTextField.resignFirstResponder()
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         if let injectionNumber = Int(textField.text!) {
             self.delegate?.injectionsUpdated(injectionsOn: self.injectionsSwitch.isOn, injections: injectionNumber)
         }

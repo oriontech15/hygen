@@ -20,12 +20,17 @@ class ScheduleTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "ListView"
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("FIRST LOAD VALUE: \(firstLoad)")
         if !firstLoad {
-            self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+           self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+        } else {
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         }
+        
         self.patientDates = PatientsController.shared.getDatesForPatients()
         self.tableView.reloadData()
         
@@ -35,6 +40,14 @@ class ScheduleTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+//        if let second = currentViewController as? ScheduleTableViewController {
+//            second.firstLoad = true
+//        }
+        
+        self.firstLoad = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

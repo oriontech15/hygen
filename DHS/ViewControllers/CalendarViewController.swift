@@ -74,10 +74,11 @@ class CalendarViewController: UIViewController, TodayButtonDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         menuView.commitMenuViewUpdate()
-        calendarView.commitCalendarViewUpdate {}
-        calendarView.setNeedsDisplay()
+        calendarView.commitCalendarViewUpdate()
         self.patientsForDate = PatientsController.shared.getPatientsWithDate(date: selectedDate)
         self.tableView.reloadData()
+        
+        calendarView.setNeedsDisplay()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -119,13 +119,15 @@ class ProgressController {
                 print("\(patient.firstName) ----> \(patient.injections)")
             }
             
-            if patient.xrays {
-                if patient.panoXRay {
-                    self.totalCurrentPano += 1
-                } else if patient.bwx {
-                    self.totalCurrentBWX += 1
-                } else if patient.pa {
-                    self.totalCurrentPA = patient.paNumber
+            if let xrays = patient.xrays?.allObjects as? [Xray] {
+                for xray in xrays {
+                    if xray.pano {
+                        self.totalCurrentPano += 1
+                    } else if xray.bwx {
+                        self.totalCurrentBWX += 1
+                    } else if xray.pa {
+                        self.totalCurrentPA = Int64(xray.paNumber)
+                    }
                 }
             }
             

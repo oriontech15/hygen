@@ -28,7 +28,7 @@ class RequirementSetupViewController: UIViewController, RequirementButtonDelegat
         self.doneButton.backgroundColor = AppearanceController.shared.mainColor
         
         collectionView.decelerationRate = UIScrollViewDecelerationRateFast
-        _ = RequirementController.shared.createRequirements({_ in})
+        _ = RequirementController.shared.createRequirements({_,_,_  in})
         self.collectionView.reloadData()
     }
     

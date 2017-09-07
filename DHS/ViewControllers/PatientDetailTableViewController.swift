@@ -33,7 +33,7 @@ protocol CheckNotesDataDelegate {
     func getData() -> String?
 }
 
-class PatientDetailTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, AppointmentCellDelegate, XrayCellDelegate, InjectionsCellDelegate, QuadsCellDelegate, NotesCellDelegate {
+class PatientDetailTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, AppointmentCellDelegate, XrayCellDelegate, InjectionsCellDelegate, QuadsCellDelegate, NotesCellDelegate, AddXrayButtonDelegate {
     
     var patient: Patient!
     
@@ -157,13 +157,14 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         }
     }
     
+    var additionalXrayCount: Int = 0 {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
     var originalClass: String?
     var originalDate: NSDate?
-    var originalXrayType: Int?
-    var originalXray: Int?
-    var originalXrayOn: Bool?
-    var originalSets: Int?
-    var originalPaNumber: Int?
     var originalInjections: Int?
     var originalInjectionsOn: Bool?
     var originalQuads: Int?
@@ -177,7 +178,7 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PatientDetailViewController.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
         
         self.nameLabel.text = patient.firstName + " " + patient.lastName
@@ -208,7 +209,7 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         self.emailTextField.inputAccessoryView = doneToolbar
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.phoneTextField.resignFirstResponder()
         self.emailTextField.resignFirstResponder()
@@ -219,11 +220,8 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         tableView.rowHeight = UITableViewAutomaticDimension
         firstLoad = false
         if self.patient != nil {
-            printOriginalInfo(patient: patient)
             
             self.originalClass = patient.requirement.type
-            self.originalInjectionsOn = patient.injectionsOn
-            self.originalXrayOn = patient.xrays
             self.originalDate = patient.dateOfAppointment
             self.originalInjections = Int(patient.injections)
             self.originalQuads = Int(patient.quads)
@@ -252,44 +250,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
                 self.emailButton.isEnabled = true
             }
             
-            if patient.xrays {
-                self.xraysOn = true
-                if patient.panoXRay {
-                    if patient.cbct {
-                        self.originalXrayType = xRayType.cbct.rawValue
-                    } else {
-                        self.originalXrayType = xRayType.scanX.rawValue
-                    }
-                    self.originalXray = xRayRequirement.pano.rawValue
-                } else if patient.bwx {
-                    if patient.schick {
-                        self.originalXrayType = xRayType.schick.rawValue
-                    } else {
-                        self.originalXrayType = xRayType.scanX.rawValue
-                    }
-                    self.originalXray = xRayRequirement.bwx.rawValue
-                    self.originalSets = Int(patient.bwxSets)
-                } else if patient.pa {
-                    self.originalPaNumber = Int(patient.paNumber)
-                    if patient.schick {
-                        self.originalXrayType = xRayType.schick.rawValue
-                    } else {
-                        self.originalXrayType = xRayType.scanX.rawValue
-                    }
-                    self.originalXray = xRayRequirement.pa.rawValue
-                }
-                
-                self.xrayRequirement = xRayRequirement(rawValue: originalXray!)
-                self.xrayType = xRayType(rawValue: self.originalXrayType!)
-                self.sets = originalSets
-                self.paNumber = originalPaNumber
-                
-                self.injectionsOn = patient.injectionsOn
-                if patient.injectionsOn {
-                    self.injections = originalInjections
-                }
-            }
-            
             self.date = originalDate
             self.quads = originalQuads
             self.notes = originalNotes
@@ -302,80 +262,7 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         }
     }
     
-    func printOriginalInfo(patient: Patient) {
-        
-        print("\n--------------------------- ORIGINAL INFO FOR PATIENT --------------------------")
-        
-        print("Xrays On -- \(patient.xrays)")
-        if patient.xrays {
-            if patient.panoXRay {
-                print("Panos? -- \(patient.panoXRay)")
-                if patient.cbct {
-                    print("CBCT -- \(patient.cbct)")
-                } else {
-                    print("ScanX -- \(patient.scanX)")
-                }
-            } else if patient.bwx {
-                print("BWX -- \(patient.bwx)")
-                print("Sets -- \(patient.bwxSets)")
-                if patient.schick {
-                    print("Schick -- \(patient.schick)")
-                } else {
-                    print("ScanX -- \(patient.scanX)")
-                }
-            } else if patient.pa {
-                print("PA -- \(patient.pa)")
-                print("PA Number -- \(patient.paNumber)")
-                if patient.schick {
-                    print("Schick -- \(patient.schick)")
-                } else {
-                    print("ScanX -- \(patient.scanX)")
-                }
-            }
-            
-            print("Injections -- \(patient.injectionsOn)")
-            if patient.injectionsOn {
-                print("Injection Num -- \(patient.injections)")
-            }
-            
-            print("Class -- \(patient.requirement.type)")
-            print("Notes -- \(patient.notes ?? "No Notes")")
-            print("Quads -- \(patient.quads)")
-            print("Email -- \(patient.email ?? "No Email")")
-            print("Phone -- \(patient.phone ?? "No Phone")")
-            print("Complete? -- \(patient.complete)")
-        }
-        
-        print("--------------------------- ORIGINAL INFO FOR PATIENT --------------------------\n")
-    }
-    
-    func printUpdatedInfo() {
-        
-        print("\n--------------------------- UPDATED INFO FOR PATIENT --------------------------")
-        
-        print("Xrays On -- \(xraysOn)")
-        if xraysOn {
-            if let requirement = xrayRequirement {
-                print("Requirement? -- \(requirement)")
-            }
-            if let injectionsOn = self.injectionsOn {
-                print("Injections -- \(injectionsOn)")
-                if injectionsOn {
-                    print("Injection Num -- \(injections ?? 0)")
-                }
-            }
-            
-            print("Notes -- \(notes ?? "No Notes")")
-            print("Quads -- \(quads ?? 0)")
-            print("Email -- \(email ?? "No Email")")
-            print("Phone -- \(phone ?? "No Phone")")
-            print("Complete? -- \(complete)")
-        }
-        
-        print("--------------------------- UPDATED INFO FOR PATIENT --------------------------\n")
-    }
-    
-    func back(sender: UIBarButtonItem) {
+    @objc func back(sender: UIBarButtonItem) {
         if !saveButtonUsed {
             checkForChanges(saveButton: self.saveButtonUsed) {
                 if self.changesMade {
@@ -387,7 +274,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
                     
                     let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                         
-                        PatientsController.shared.updatePatientXRays(patient: self.patient, xray: self.xraysOn, requirement: self.xrayRequirement, type: self.xrayType, paNumber: self.paNumber, sets: self.sets)
                         if let date = self.date {
                             PatientsController.shared.updateDateFor(patient: self.patient, date: date)
                         }
@@ -431,27 +317,14 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
     func checkForChanges(saveButton: Bool, completion: @escaping () -> Void) {
         
         if saveButton {
-            printOriginalInfo(patient: patient)
-            printUpdatedInfo()
             
             let group = DispatchGroup()
             let queue = DispatchQueue(label: "getData")
             queue.async {
                 group.enter()
-                let xrayData = self.xrayDelegate?.getData()
                 let appointmentData = self.appointmentDelegate?.getData()
-                let quadsData = self.quadsDelegate?.getData()
                 let notesData = self.notesDelegate?.getData()
-                let injectionsData = self.injectionDelegate?.getData()
-                self.xraysOn = (xrayData?.xray)!
-                self.xrayRequirement = xrayData?.requirement
-                self.xrayType = xrayData?.type
-                self.sets = xrayData?.sets
-                self.paNumber = xrayData?.pa
                 self.date = appointmentData
-                self.quads = quadsData
-                self.injectionsOn = injectionsData?.injectionOn
-                self.injections = injectionsData?.injections
                 self.notes = notesData
                 group.leave()
             }
@@ -462,53 +335,15 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
                 }
             })
         } else {
-            printOriginalInfo(patient: self.patient)
-            printUpdatedInfo()
             
             let group = DispatchGroup()
             let queue = DispatchQueue(label: "getData")
             queue.async {
                 group.enter()
-                let xrayData = self.xrayDelegate?.getData()
                 let appointmentData = self.appointmentDelegate?.getData()
-                let quadsData = self.quadsDelegate?.getData()
                 let notesData = self.notesDelegate?.getData()
-                let injectionsData = self.injectionDelegate?.getData()
-                
-                if self.originalXrayOn != xrayData?.xray {
-                    self.xraysOn = (xrayData?.xray)!
-                    self.changesMade = true
-                }
-                if self.originalXray != xrayData?.requirement?.rawValue {
-                    self.xrayRequirement = xrayData?.requirement
-                    self.changesMade = true
-                }
-                if self.originalXrayType != xrayData?.type?.rawValue {
-                    self.xrayType = xrayData?.type
-                    self.changesMade = true
-                }
                 if self.originalDate != appointmentData {
                     self.date = appointmentData
-                    self.changesMade = true
-                }
-                if self.originalSets != xrayData?.sets {
-                    self.sets = xrayData?.sets
-                    self.changesMade = true
-                }
-                if self.originalPaNumber != xrayData?.pa {
-                    self.paNumber = xrayData?.pa
-                    self.changesMade = true
-                }
-                if self.originalInjectionsOn != injectionsData?.injectionOn {
-                    self.injectionsOn = injectionsData?.injectionOn
-                    self.changesMade = true
-                }
-                if self.originalInjections != injectionsData?.injections {
-                    self.injections = injectionsData?.injections
-                    self.changesMade = true
-                }
-                if self.originalQuads != quadsData {
-                    self.quads = quadsData
                     self.changesMade = true
                 }
                 if self.originalNotes != notesData {
@@ -583,13 +418,16 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         self.tableView.endUpdates()
     }
     
+    func addXrayButtonTapped() {
+        self.additionalXrayCount += 1
+    }
+    
     @IBAction func saveButtonTapped() {
         self.tableView.endEditing(true)
         
         self.saveButtonUsed = true
         
         self.checkForChanges(saveButton: self.saveButtonUsed) {
-            PatientsController.shared.updatePatientXRays(patient: self.patient, xray: self.xraysOn, requirement: self.xrayRequirement, type: self.xrayType, paNumber: self.paNumber, sets: self.sets)
             
             if let date = self.date {
                 PatientsController.shared.updateDateFor(patient: self.patient, date: date)
@@ -735,27 +573,17 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         if complete {
             self.completeButton.titleLabel?.numberOfLines = 0
             self.completeButton.titleLabel?.textAlignment = .center
-            let buttonText = "Patient Completed \n\n(tap again to edit patient)"
-            
-            //getting both substrings
-            var substring1 = ""
-            var substring2 = ""
-            if let newlineRange: Range = buttonText.range(of: "\n") {
-            
-                substring1 = buttonText.substring(to: newlineRange.lowerBound)
-                substring2 = buttonText.substring(from: newlineRange.upperBound)
-            }
             
             //assigning diffrent fonts to both substrings
             let font: UIFont? = UIFont(name: "Comfortaa-Regular", size: 18.0)
             let attrString = NSMutableAttributedString(
-                string: substring1,
-                attributes: [NSFontAttributeName : font!])
+                string: "Patient Completed",
+                attributes: [NSAttributedStringKey.font : font!])
             
             let font1: UIFont? = UIFont(name: "Comfortaa-Regular", size: 10.0)
             let attrString1 = NSMutableAttributedString(
-                string: substring2,
-                attributes: [NSFontAttributeName : font1!])
+                string: "\n(tap again to edit patient)",
+                attributes: [NSAttributedStringKey.font : font1!])
             
             //appending both attributed strings
             attrString.append(attrString1)
@@ -807,6 +635,22 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toXrayView" {
+            if let vc = segue.destination as? XrayTableViewController {
+                vc.patient = self.patient
+            }
+        } else if segue.identifier == "toInjectionsView" {
+            if let vc = segue.destination as? InjectionSetupViewController {
+                vc.patient = self.patient
+            }
+        } else if segue.identifier == "toQuadsView" {
+            if let vc = segue.destination as? QuadSetupViewController {
+                vc.patient = self.patient
+            }
+        }
+    }
+    
     /************************************/
     /** TABLEVIEW DATASOURCE FUNCTIONS **/
     /************************************/
@@ -832,28 +676,19 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
             self.appointmentDelegate = cell
             return cell ?? UITableViewCell()
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "xrayCell", for: indexPath) as? XrayTableViewCell
-            cell?.updateWith(patient: self.patient, editable: self.editable)
-            cell?.delegate = self
-            self.xrayDelegate = cell
-            return cell ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "toXrayViewCell", for: indexPath)
+            return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "injectionsCell", for: indexPath) as? InjectionsTableViewCell
-            cell?.updateWith(patient: self.patient, editable: self.editable)
-            cell?.delegate = self
-            self.injectionDelegate = cell
-            return cell ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "toInjectionsViewCell", for: indexPath)
+            return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as? UpdateClassTableViewCell
             cell?.updateWith(patient: self.patient, editable: self.editable)
             self.classDelegate = cell
             return cell ?? UITableViewCell()
         case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "quadsCell", for: indexPath) as? QuadsTableViewCell
-            cell?.updateWith(patient: self.patient, editable: self.editable)
-            cell?.delegate = self
-            self.quadsDelegate = cell
-            return cell ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "toQuadsViewCell", for: indexPath)
+            return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath) as? NotesTableViewCell
             cell?.updateWith(patient: self.patient, editable: self.editable)
@@ -865,13 +700,27 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "toXrayView", sender: nil)
+        } else if indexPath.row == 2 {
+            self.performSegue(withIdentifier: "toInjectionsView", sender: nil)
+        } else if indexPath.row == 4 {
+            self.performSegue(withIdentifier: "toQuadsView", sender: nil)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cellHeightDictionary[indexPath] = cell.frame.size.height
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let height = cellHeightDictionary[indexPath] {
-            return height
+            return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 3 {
+            return 119
         } else {
             return UITableViewAutomaticDimension
         }

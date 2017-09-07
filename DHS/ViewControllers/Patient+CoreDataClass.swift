@@ -2,7 +2,7 @@
 //  Patient+CoreDataClass.swift
 //  DHS
 //
-//  Created by Justin Smith on 8/16/17.
+//  Created by Justin Smith on 9/5/17.
 //  Copyright © 2017 com.example. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import CoreData
 
 @objc(Patient)
 public class Patient: NSManagedObject {
-    
+
     convenience init?(firstName: String, lastName: String, dateOfAppointment: Date, classType: Requirement, user: User, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entity(forEntityName: "Patient", in: context) else { return nil }
@@ -29,5 +29,6 @@ public class Patient: NSManagedObject {
         self.complete = false
         self.email = nil
         self.phone = nil
+        self.xrays = nil
     }
 }

@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if RequirementController.shared.allRequirements.count == 10 {
+        
+        
+        if RequirementController.shared.allRequirements.count == 10 && checkSetupState() {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -53,6 +55,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return true
             }
         }        
+    }
+    
+    private func checkSetupState() -> Bool {
+        var requirementSetup: Bool = false
+        var requirementSetupCount = 0
+
+        for requirement in RequirementController.shared.allRequirements {
+            
+            if  requirement.total > 0 {
+                requirementSetupCount += 1;
+            }
+            
+            print(requirementSetupCount)
+            if requirementSetupCount == 10 {
+                requirementSetup = true
+            } else {
+                requirementSetup = false
+            }
+        }
+        
+        return requirementSetup
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

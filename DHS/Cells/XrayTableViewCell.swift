@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol XrayCellDelegate {
-    func xrayUpdated(xray: Bool, requirement: xRayRequirement?, type: xRayType?, paNumber: Int?, sets: Int?)
-}
-
 class XrayTableViewCell: UITableViewCell, UITextFieldDelegate, CheckXrayDataDelegate {
     
     @IBOutlet weak var xraySwitch: UISwitch!
@@ -106,7 +102,7 @@ class XrayTableViewCell: UITableViewCell, UITextFieldDelegate, CheckXrayDataDele
         self.numberTextField.delegate = self
     }
     
-    func doneButtonAction()
+    @objc func doneButtonAction()
     {
         self.numberTextField.resignFirstResponder()
     }
@@ -118,7 +114,6 @@ class XrayTableViewCell: UITableViewCell, UITextFieldDelegate, CheckXrayDataDele
         setsSegmentedControl.items = ["2", "4"]
         typeSegmentedControl.items = panoItems
         updateEditable(editable: editable)
-        setupView()
     }
     
     func getData() -> (xray: Bool, requirement: xRayRequirement?, type: xRayType?, sets: Int?, pa: Int?) {
@@ -172,76 +167,6 @@ class XrayTableViewCell: UITableViewCell, UITextFieldDelegate, CheckXrayDataDele
             self.setsSegmentedControl.newBackgroundColor = .white
             self.bottomView.backgroundColor = .white
             self.contentView.backgroundColor = .white
-        }
-    }
-    
-    func setupView() {
-        if firstLoad {
-            firstLoad = false
-            if self.patient != nil {
-                if patient.xrays {
-                    self.xraySwitch.isOn = patient.xrays
-                    self.xraySwitched(self.xraySwitch)
-                    if patient.panoXRay {
-                        self.xrayRequirement = .pano
-                        self.segmentedControl.selectedIndex = 0
-                        if patient.cbct {
-                            self.typeSegmentedControl.selectedIndex = 0
-                            self.xrayType = .cbct
-                            self.originalXrayType = xRayType.cbct.rawValue
-                        } else {
-                            self.typeSegmentedControl.selectedIndex = 1
-                            self.xrayType = .scanX
-                            self.originalXrayType = xRayType.scanX.rawValue
-                        }
-                        self.originalXray = xRayRequirement.pano.rawValue
-                        self.pano()
-                    } else if patient.bwx {
-                        self.xrayRequirement = .bwx
-                        self.segmentedControl.selectedIndex = 1
-                        if patient.schick {
-                            self.typeSegmentedControl.selectedIndex = 0
-                            self.xrayType = .schick
-                            self.originalXrayType = xRayType.schick.rawValue
-                        } else {
-                            self.typeSegmentedControl.selectedIndex = 1
-                            self.xrayType = .scanX
-                            self.originalXrayType = xRayType.scanX.rawValue
-                        }
-                        self.originalXray = xRayRequirement.bwx.rawValue
-                        self.originalSets = Int(patient.bwxSets)
-                        self.sets = Int(patient.bwxSets)
-                        switch sets! {
-                        case 2:
-                            self.setsSegmentedControl.selectedIndex = 0
-                            break
-                        case 4:
-                            self.setsSegmentedControl.selectedIndex = 1
-                            break
-                        default:
-                            break
-                        }
-                        self.bwx()
-                    } else if patient.pa {
-                        self.xrayRequirement = .pa
-                        self.paNumber = Int(patient.paNumber)
-                        self.originalPaNumber = Int(patient.paNumber)
-                        self.segmentedControl.selectedIndex = 2
-                        if patient.schick {
-                            self.typeSegmentedControl.selectedIndex = 0
-                            self.xrayType = .schick
-                            self.originalXrayType = xRayType.schick.rawValue
-                        } else {
-                            self.typeSegmentedControl.selectedIndex = 1
-                            self.xrayType = .scanX
-                            self.originalXrayType = xRayType.scanX.rawValue
-                        }
-                        self.originalXray = xRayRequirement.pa.rawValue
-                        self.numberTextField.text = "\(patient.paNumber)"
-                        self.pa()
-                    }
-                }
-            }
         }
     }
     

@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8240DBC13616A1035BFCEF75 /* Pods_DHS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33D502914F8C6F19A561543 /* Pods_DHS.framework */; };
 		DB0FE4EB1EF074F700D26F4A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0FE4EA1EF074F700D26F4A /* WelcomeViewController.swift */; };
 		DB0FE4ED1EF079D300D26F4A /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0FE4EC1EF079D300D26F4A /* AppearanceController.swift */; };
-		DB10BC271F44DB000013F695 /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB10BC251F44DB000013F695 /* Patient+CoreDataClass.swift */; };
-		DB10BC281F44DB000013F695 /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB10BC261F44DB000013F695 /* Patient+CoreDataProperties.swift */; };
 		DB1937CA1F5496FF00A31697 /* Requirement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1937C81F5496FF00A31697 /* Requirement+CoreDataClass.swift */; };
 		DB1937CB1F5496FF00A31697 /* Requirement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1937C91F5496FF00A31697 /* Requirement+CoreDataProperties.swift */; };
+		DB2BDC4D1F574B8800E5DEF8 /* XrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BDC4C1F574B8800E5DEF8 /* XrayTableViewController.swift */; };
+		DB2BDC4F1F574BDB00E5DEF8 /* InjectionSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BDC4E1F574BDB00E5DEF8 /* InjectionSetupViewController.swift */; };
+		DB2BDC511F574BF000E5DEF8 /* CreateXrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BDC501F574BF000E5DEF8 /* CreateXrayViewController.swift */; };
+		DB2BDC531F574BFE00E5DEF8 /* QuadSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BDC521F574BFE00E5DEF8 /* QuadSetupViewController.swift */; };
 		DB35B9D61EF0D6E300323250 /* RequirementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35B9D51EF0D6E300323250 /* RequirementTableViewCell.swift */; };
 		DB35B9D81EF0E8AE00323250 /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35B9D71EF0E8AE00323250 /* PatientTableViewCell.swift */; };
 		DB3E49321F4286390076C9E0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E49311F4286390076C9E0 /* TextButton.swift */; };
 		DB3E49341F428F120076C9E0 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E49331F428F120076C9E0 /* RoundedBackgroundView.swift */; };
 		DB48FB8A1F2128EF00214F90 /* ScheduleMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48FB891F2128EF00214F90 /* ScheduleMainViewController.swift */; };
 		DB48FB8C1F2161F800214F90 /* ClassTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48FB8B1F2161F800214F90 /* ClassTagView.swift */; };
+		DB497EEF1F5F3F4200178C7C /* Xray+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB497EED1F5F3F4200178C7C /* Xray+CoreDataClass.swift */; };
+		DB497EF01F5F3F4200178C7C /* Xray+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB497EEE1F5F3F4200178C7C /* Xray+CoreDataProperties.swift */; };
+		DB497EF31F5F40B700178C7C /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB497EF11F5F40B700178C7C /* Patient+CoreDataClass.swift */; };
+		DB497EF41F5F40B700178C7C /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB497EF21F5F40B700178C7C /* Patient+CoreDataProperties.swift */; };
+		DB497EF61F5F433800178C7C /* XraySimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB497EF51F5F433800178C7C /* XraySimpleTableViewCell.swift */; };
 		DB5037DC1EEEEACE00A4AEE1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5037DB1EEEEACE00A4AEE1 /* TabView.swift */; };
 		DB5037DE1EEEF94100A4AEE1 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5037DD1EEEF94100A4AEE1 /* CircleProgressView.swift */; };
 		DB5037E01EEF008F00A4AEE1 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5037DF1EEF008F00A4AEE1 /* ProgressController.swift */; };
@@ -71,6 +77,7 @@
 		DB912EF01EEB046400E014ED /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912EEF1EEB046400E014ED /* Enums.swift */; };
 		DB912EF41EEB126B00E014ED /* CustomRequirementTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912EF31EEB126B00E014ED /* CustomRequirementTextField.swift */; };
 		DB912EF61EEB18BE00E014ED /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912EF51EEB18BE00E014ED /* CustomCollectionViewLayout.swift */; };
+		DB9339A71F5F8CD400086F56 /* XrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9339A61F5F8CD400086F56 /* XrayController.swift */; };
 		DBA8DC4C1EEB44FC00EAF8F7 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8DC4B1EEB44FC00EAF8F7 /* ProgressButton.swift */; };
 		DBA8DC4E1EEB450500EAF8F7 /* CreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8DC4D1EEB450500EAF8F7 /* CreateButton.swift */; };
 		DBA8DC501EEB450F00EAF8F7 /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8DC4F1EEB450F00EAF8F7 /* CalendarButton.swift */; };
@@ -81,7 +88,6 @@
 		DBC25CED1F47758700067EAE /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBD1C6D31F3E1486005DC237 /* Comfortaa-Light.ttf */; };
 		DBC25CEE1F47758700067EAE /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBD1C6D41F3E1486005DC237 /* Comfortaa-Regular.ttf */; };
 		DBC25CF01F477C8800067EAE /* NoPatientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC25CEF1F477C8800067EAE /* NoPatientsTableViewCell.swift */; };
-		DBC914EA1F16927500AE777E /* PatientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC914E91F16927500AE777E /* PatientDetailViewController.swift */; };
 		DBD19C6C1EF031B20055C607 /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD19C6B1EF031B20055C607 /* AppointmentTableViewCell.swift */; };
 		DBD19C8C1EF04B330055C607 /* PatientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD19C8B1EF04B330055C607 /* PatientsController.swift */; };
 		DBD19C8E1EF04C8D0055C607 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD19C8D1EF04C8D0055C607 /* UserController.swift */; };
@@ -94,25 +100,30 @@
 		DBD1C6E01F3E3D44005DC237 /* BWXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1C6DF1F3E3D44005DC237 /* BWXViewController.swift */; };
 		DBD1C6E21F3E3D50005DC237 /* PAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1C6E11F3E3D50005DC237 /* PAViewController.swift */; };
 		DBD1C6E41F3E631F005DC237 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1C6E31F3E631F005DC237 /* TabBarView.swift */; };
+		DBD4C7E51F56675B00A34AD8 /* AddXrayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD4C7E41F56675B00A34AD8 /* AddXrayTableViewCell.swift */; };
 		DBEC10961F2284AA00D428DE /* LeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEC10951F2284AA00D428DE /* LeftButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EDF4CBBF1F9C4F64D9BB77C /* Pods-DHS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHS.release.xcconfig"; path = "Pods/Target Support Files/Pods-DHS/Pods-DHS.release.xcconfig"; sourceTree = "<group>"; };
-		6F0C5EFD987EC27DA3DA3E61 /* Pods-DHS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DHS/Pods-DHS.debug.xcconfig"; sourceTree = "<group>"; };
-		B33D502914F8C6F19A561543 /* Pods_DHS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DHS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0FE4EA1EF074F700D26F4A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DB0FE4EC1EF079D300D26F4A /* AppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
-		DB10BC251F44DB000013F695 /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DB10BC261F44DB000013F695 /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DB1937C81F5496FF00A31697 /* Requirement+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Requirement+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DB1937C91F5496FF00A31697 /* Requirement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Requirement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DB2BDC4C1F574B8800E5DEF8 /* XrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XrayTableViewController.swift; sourceTree = "<group>"; };
+		DB2BDC4E1F574BDB00E5DEF8 /* InjectionSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectionSetupViewController.swift; sourceTree = "<group>"; };
+		DB2BDC501F574BF000E5DEF8 /* CreateXrayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateXrayViewController.swift; sourceTree = "<group>"; };
+		DB2BDC521F574BFE00E5DEF8 /* QuadSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadSetupViewController.swift; sourceTree = "<group>"; };
 		DB35B9D51EF0D6E300323250 /* RequirementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementTableViewCell.swift; sourceTree = "<group>"; };
 		DB35B9D71EF0E8AE00323250 /* PatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
 		DB3E49311F4286390076C9E0 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		DB3E49331F428F120076C9E0 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
 		DB48FB891F2128EF00214F90 /* ScheduleMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMainViewController.swift; sourceTree = "<group>"; };
 		DB48FB8B1F2161F800214F90 /* ClassTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTagView.swift; sourceTree = "<group>"; };
+		DB497EED1F5F3F4200178C7C /* Xray+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Xray+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DB497EEE1F5F3F4200178C7C /* Xray+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Xray+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DB497EF11F5F40B700178C7C /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Patient+CoreDataClass.swift"; path = "../ViewControllers/Patient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DB497EF21F5F40B700178C7C /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Patient+CoreDataProperties.swift"; path = "../ViewControllers/Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DB497EF51F5F433800178C7C /* XraySimpleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XraySimpleTableViewCell.swift; sourceTree = "<group>"; };
 		DB5037DB1EEEEACE00A4AEE1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DB5037DD1EEEF94100A4AEE1 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		DB5037DF1EEF008F00A4AEE1 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
@@ -166,6 +177,7 @@
 		DB912EEF1EEB046400E014ED /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		DB912EF31EEB126B00E014ED /* CustomRequirementTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRequirementTextField.swift; sourceTree = "<group>"; };
 		DB912EF51EEB18BE00E014ED /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DB9339A61F5F8CD400086F56 /* XrayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayController.swift; sourceTree = "<group>"; };
 		DBA8DC4B1EEB44FC00EAF8F7 /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		DBA8DC4D1EEB450500EAF8F7 /* CreateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButton.swift; sourceTree = "<group>"; };
 		DBA8DC4F1EEB450F00EAF8F7 /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
@@ -173,7 +185,6 @@
 		DBB5AA411F3CCDBD00B83E9A /* SlideAnimatorTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatorTop.swift; sourceTree = "<group>"; };
 		DBB5AA431F3D08DA00B83E9A /* SlideAnimatorLeftRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatorLeftRight.swift; sourceTree = "<group>"; };
 		DBC25CEF1F477C8800067EAE /* NoPatientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPatientsTableViewCell.swift; sourceTree = "<group>"; };
-		DBC914E91F16927500AE777E /* PatientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailViewController.swift; sourceTree = "<group>"; };
 		DBD19C6B1EF031B20055C607 /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		DBD19C8B1EF04B330055C607 /* PatientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsController.swift; sourceTree = "<group>"; };
 		DBD19C8D1EF04C8D0055C607 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -189,6 +200,7 @@
 		DBD1C6DF1F3E3D44005DC237 /* BWXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWXViewController.swift; sourceTree = "<group>"; };
 		DBD1C6E11F3E3D50005DC237 /* PAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAViewController.swift; sourceTree = "<group>"; };
 		DBD1C6E31F3E631F005DC237 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		DBD4C7E41F56675B00A34AD8 /* AddXrayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddXrayTableViewCell.swift; sourceTree = "<group>"; };
 		DBEC10951F2284AA00D428DE /* LeftButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,33 +209,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8240DBC13616A1035BFCEF75 /* Pods_DHS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B4D09B30F3F43DC6D3D2AE2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6F0C5EFD987EC27DA3DA3E61 /* Pods-DHS.debug.xcconfig */,
-				0EDF4CBBF1F9C4F64D9BB77C /* Pods-DHS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BC4DE7BCEB2F88B2D40F1312 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B33D502914F8C6F19A561543 /* Pods_DHS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DB8082801F421D1E006462E8 /* PatientDetailCells */ = {
 			isa = PBXGroup;
 			children = (
+				DB497EF51F5F433800178C7C /* XraySimpleTableViewCell.swift */,
+				DBD4C7E41F56675B00A34AD8 /* AddXrayTableViewCell.swift */,
 				DB8082741F421CCA006462E8 /* UpdateAppointmentTableViewCell.swift */,
 				DB8082761F421CDC006462E8 /* XrayTableViewCell.swift */,
 				DB8082781F421CEA006462E8 /* InjectionsTableViewCell.swift */,
@@ -259,8 +255,6 @@
 			children = (
 				DB912ED31EEAFBA200E014ED /* DHS */,
 				DB912ED21EEAFBA200E014ED /* Products */,
-				5B4D09B30F3F43DC6D3D2AE2 /* Pods */,
-				BC4DE7BCEB2F88B2D40F1312 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,10 +292,12 @@
 		DBD19C851EF04A0D0055C607 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DB497EED1F5F3F4200178C7C /* Xray+CoreDataClass.swift */,
+				DB497EEE1F5F3F4200178C7C /* Xray+CoreDataProperties.swift */,
 				DB1937C81F5496FF00A31697 /* Requirement+CoreDataClass.swift */,
 				DB1937C91F5496FF00A31697 /* Requirement+CoreDataProperties.swift */,
-				DB10BC251F44DB000013F695 /* Patient+CoreDataClass.swift */,
-				DB10BC261F44DB000013F695 /* Patient+CoreDataProperties.swift */,
+				DB497EF11F5F40B700178C7C /* Patient+CoreDataClass.swift */,
+				DB497EF21F5F40B700178C7C /* Patient+CoreDataProperties.swift */,
 				DB6B0E601F437BE100DDDD5D /* User+CoreDataProperties.swift */,
 				DB6B0E611F437BE100DDDD5D /* User+CoreDataClass.swift */,
 			);
@@ -311,6 +307,10 @@
 		DBD19C861EF04A240055C607 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB2BDC4C1F574B8800E5DEF8 /* XrayTableViewController.swift */,
+				DB2BDC4E1F574BDB00E5DEF8 /* InjectionSetupViewController.swift */,
+				DB2BDC501F574BF000E5DEF8 /* CreateXrayViewController.swift */,
+				DB2BDC521F574BFE00E5DEF8 /* QuadSetupViewController.swift */,
 				DB8082871F42248F006462E8 /* PatientDetailTableViewController.swift */,
 				DB6B0E721F43979B00DDDD5D /* InjectionsViewController.swift */,
 				DBD1C6DD1F3E3D35005DC237 /* PanoViewController.swift */,
@@ -318,7 +318,6 @@
 				DBD1C6E11F3E3D50005DC237 /* PAViewController.swift */,
 				DB7AF22D1F1FCDEB00E822DF /* CalendarViewController.swift */,
 				DB48FB891F2128EF00214F90 /* ScheduleMainViewController.swift */,
-				DBC914E91F16927500AE777E /* PatientDetailViewController.swift */,
 				DB0FE4EA1EF074F700D26F4A /* WelcomeViewController.swift */,
 				DB912EF51EEB18BE00E014ED /* CustomCollectionViewLayout.swift */,
 				DB5037E91EEF070F00A4AEE1 /* ScheduleTableViewController.swift */,
@@ -375,6 +374,7 @@
 				DB9113DD1EEF8876009FF16A /* RequirementController.swift */,
 				DB5037DF1EEF008F00A4AEE1 /* ProgressController.swift */,
 				DBD19C8B1EF04B330055C607 /* PatientsController.swift */,
+				DB9339A61F5F8CD400086F56 /* XrayController.swift */,
 				DB0FE4EC1EF079D300D26F4A /* AppearanceController.swift */,
 			);
 			path = Controllers;
@@ -423,12 +423,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB912EE61EEAFBA200E014ED /* Build configuration list for PBXNativeTarget "DHS" */;
 			buildPhases = (
-				9137D936CD5EC722FB8699CE /* [CP] Check Pods Manifest.lock */,
 				DB912ECD1EEAFBA200E014ED /* Sources */,
 				DB912ECE1EEAFBA200E014ED /* Frameworks */,
 				DB912ECF1EEAFBA200E014ED /* Resources */,
-				1BB776308D913AD7BC23676A /* [CP] Embed Pods Frameworks */,
-				48FC61CAB57EC33F8C8648EE /* [CP] Copy Pods Resources */,
+				DB9339A31F5F70BF00086F56 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -451,6 +449,7 @@
 				TargetAttributes = {
 					DB912ED01EEAFBA200E014ED = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -493,50 +492,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BB776308D913AD7BC23676A /* [CP] Embed Pods Frameworks */ = {
+		DB9339A31F5F70BF00086F56 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DHS/Pods-DHS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		48FC61CAB57EC33F8C8648EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DHS/Pods-DHS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9137D936CD5EC722FB8699CE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" -type f\\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -545,19 +512,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB10BC281F44DB000013F695 /* Patient+CoreDataProperties.swift in Sources */,
 				DB8082881F42248F006462E8 /* PatientDetailTableViewController.swift in Sources */,
 				DBD1C6E21F3E3D50005DC237 /* PAViewController.swift in Sources */,
 				DB7AF22C1F1FCC8300E822DF /* CustomSegmentedControl.swift in Sources */,
 				DBD19C901EF04E4C0055C607 /* Stack.swift in Sources */,
-				DB10BC271F44DB000013F695 /* Patient+CoreDataClass.swift in Sources */,
+				DBD4C7E51F56675B00A34AD8 /* AddXrayTableViewCell.swift in Sources */,
 				DB5037EE1EEF0CE900A4AEE1 /* EditClassesButton.swift in Sources */,
 				DB6B0E711F43892100DDDD5D /* RoundedSquareBackground.swift in Sources */,
+				DB497EF31F5F40B700178C7C /* Patient+CoreDataClass.swift in Sources */,
 				DB8082731F4217DF006462E8 /* RoundedTextView.swift in Sources */,
 				DBD1C6CF1F3E0B0B005DC237 /* ToothStyleKit.swift in Sources */,
 				DB6B0E621F437BE100DDDD5D /* User+CoreDataProperties.swift in Sources */,
 				DB80827B1F421CFA006462E8 /* UpdateClassTableViewCell.swift in Sources */,
 				DB5037F21EEF18A700A4AEE1 /* GradientView.swift in Sources */,
+				DB497EF41F5F40B700178C7C /* Patient+CoreDataProperties.swift in Sources */,
 				DB5037EA1EEF070F00A4AEE1 /* ScheduleTableViewController.swift in Sources */,
 				DB7CEB301EF1009A00EAD64C /* StyleKit.swift in Sources */,
 				DB9113DC1EEF7C50009FF16A /* ColorPickerViewController.swift in Sources */,
@@ -567,6 +535,7 @@
 				DB5037F81EEF4C8F00A4AEE1 /* NumPad.swift in Sources */,
 				DB912EF41EEB126B00E014ED /* CustomRequirementTextField.swift in Sources */,
 				DB750E6A1EF09694001648B1 /* CustomBackButton.swift in Sources */,
+				DB2BDC4D1F574B8800E5DEF8 /* XrayTableViewController.swift in Sources */,
 				DBEC10961F2284AA00D428DE /* LeftButton.swift in Sources */,
 				DB9113D81EEF76E3009FF16A /* ColorButton.swift in Sources */,
 				DB80827D1F421D08006462E8 /* QuadsTableViewCell.swift in Sources */,
@@ -580,6 +549,8 @@
 				DB8082751F421CCA006462E8 /* UpdateAppointmentTableViewCell.swift in Sources */,
 				DB5037EC1EEF08A700A4AEE1 /* CreatePatientViewController.swift in Sources */,
 				DB1937CB1F5496FF00A31697 /* Requirement+CoreDataProperties.swift in Sources */,
+				DB497EEF1F5F3F4200178C7C /* Xray+CoreDataClass.swift in Sources */,
+				DB2BDC531F574BFE00E5DEF8 /* QuadSetupViewController.swift in Sources */,
 				DBD1C6E41F3E631F005DC237 /* TabBarView.swift in Sources */,
 				DB5037E41EEF02E100A4AEE1 /* OverallProgressViewController.swift in Sources */,
 				DB8082771F421CDC006462E8 /* XrayTableViewCell.swift in Sources */,
@@ -605,16 +576,20 @@
 				DB5037E81EEF030600A4AEE1 /* ClassDetailViewController.swift in Sources */,
 				DB5037F61EEF42EC00A4AEE1 /* CustomNumButton.swift in Sources */,
 				DB912EDD1EEAFBA200E014ED /* DHS.xcdatamodeld in Sources */,
+				DB2BDC4F1F574BDB00E5DEF8 /* InjectionSetupViewController.swift in Sources */,
 				DB912EF61EEB18BE00E014ED /* CustomCollectionViewLayout.swift in Sources */,
+				DB2BDC511F574BF000E5DEF8 /* CreateXrayViewController.swift in Sources */,
 				DB0FE4ED1EF079D300D26F4A /* AppearanceController.swift in Sources */,
 				DB912ED51EEAFBA200E014ED /* AppDelegate.swift in Sources */,
 				DBB5AA441F3D08DA00B83E9A /* SlideAnimatorLeftRight.swift in Sources */,
 				DB0FE4EB1EF074F700D26F4A /* WelcomeViewController.swift in Sources */,
 				DB8082841F4222AD006462E8 /* PhoneButton.swift in Sources */,
 				DBD1C6E01F3E3D44005DC237 /* BWXViewController.swift in Sources */,
+				DB497EF61F5F433800178C7C /* XraySimpleTableViewCell.swift in Sources */,
 				DB8082791F421CEA006462E8 /* InjectionsTableViewCell.swift in Sources */,
-				DBC914EA1F16927500AE777E /* PatientDetailViewController.swift in Sources */,
+				DB497EF01F5F3F4200178C7C /* Xray+CoreDataProperties.swift in Sources */,
 				DB912EF01EEB046400E014ED /* Enums.swift in Sources */,
+				DB9339A71F5F8CD400086F56 /* XrayController.swift in Sources */,
 				DB912EEE1EEB040F00E014ED /* RequirementCollectionViewCell.swift in Sources */,
 				DBD1C6DC1F3E2FA9005DC237 /* ProgressSwitcherViewController.swift in Sources */,
 				DBA8DC501EEB450F00EAF8F7 /* CalendarButton.swift in Sources */,
@@ -711,12 +686,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -760,17 +736,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		DB912EE71EEAFBA200E014ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F0C5EFD987EC27DA3DA3E61 /* Pods-DHS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4637N428EN;
@@ -779,6 +755,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codesmith.DHS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -786,7 +763,6 @@
 		};
 		DB912EE81EEAFBA200E014ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EDF4CBBF1F9C4F64D9BB77C /* Pods-DHS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4637N428EN;
@@ -795,6 +771,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codesmith.DHS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

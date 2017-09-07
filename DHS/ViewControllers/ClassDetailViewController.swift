@@ -90,27 +90,45 @@ class ClassDetailViewController: UIViewController {
     }
     
     func updateProgress() {
-        var totalComplete: Int = 0
-        let overallTotal: Int = Int(requirement.total)
-        for patient in patients {
-            if patient.requirementComplete {
-                totalComplete += 1
-            }
-        }
         
-        if totalComplete > 0 {
-            let totalProgress = ProgressController.shared.calcProgress(currentTotal: totalComplete, total: overallTotal)
-            
-            let angle = ProgressController.shared.convertProgressToDegrees(progress: totalProgress)
-            let percent = ProgressController.shared.convertProgressToPercent(degrees: angle)
-            progressLabel.text = "\(percent)%"
-            progressView.animate(toAngle: angle, duration: 1.0, completion: nil)
-        } else {
-            progressLabel.text = "0%"
-            progressView.angle = 0
+        var totalProgress = 0.0
+        switch className! {
+        case .class1A:
+            totalProgress = ProgressController.shared.class1AProgress
+            break
+        case .class1B:
+            totalProgress = ProgressController.shared.class1BProgress
+            break
+        case .class2:
+            totalProgress = ProgressController.shared.class2Progress
+            break
+        case .class3:
+            totalProgress = ProgressController.shared.class3_4Progress
+            break
+        case .class4:
+            totalProgress = ProgressController.shared.class3_4Progress
+            break
+        case .class5:
+            totalProgress = ProgressController.shared.class5Progress
+            break
+        default:
+            break
         }
+        updateProgressOnView(label: self.progressLabel, view: progressView, progress: totalProgress)
         
-        RequirementController.shared.updateRequirementCurrentTotal(newCurrentTotal: Int64(totalComplete), type: className)
+        ProgressController.shared.updatedProgress()
+        
+        self.tableView.reloadData()
+    }
+    
+    func updateProgressOnView(label: UILabel?, view: CircleProgressView, progress: Double) {
+        print("\(progress)")
+        let angle = ProgressController.shared.convertProgressToDegrees(progress: progress)
+        let percent = ProgressController.shared.convertProgressToPercent(degrees: angle)
+        if let label = label {
+            label.text = "\(percent)%"
+        }
+        view.animate(toAngle: angle, duration: 1.0, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
