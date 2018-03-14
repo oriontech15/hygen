@@ -13,7 +13,7 @@ protocol InjectionsCellDelegate {
     func injectionsOnUpdated()
 }
 
-class InjectionsTableViewCell: UITableViewCell, UITextFieldDelegate, CheckInjectionDataDelegate {
+class InjectionsTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var firstLoad: Bool = true
     var changesMade: Bool = false

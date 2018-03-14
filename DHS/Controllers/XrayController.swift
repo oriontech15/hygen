@@ -42,6 +42,7 @@ class XrayController {
         xray.scanx = scanx
         xray.paNumber = Int32(paNumber ?? 0)
         xray.sets = Int32(sets ?? 0)
+        Stack.sharedStack.save()
     }
     
     func deleteXray(xray: Xray) {

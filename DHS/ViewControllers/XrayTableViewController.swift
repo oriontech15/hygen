@@ -126,7 +126,21 @@ class XrayTableViewController: UITableViewController, AddXrayButtonDelegate {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if let xrays = patient.xrays?.toXrays {
+                let xray = xrays[indexPath.row]
+            
+                let alert = UIAlertController(title: "Delete?", message: "Please confirm you would like to delete this xray)", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                    self.tableView.beginUpdates()
+                    XrayController.shared.deleteXray(xray: xray)
+                    tableView.deleteRows(at: [indexPath], with: .middle)
+                    self.tableView.endUpdates()
+                })
+                alert.addAction(cancelAction)
+                alert.addAction(deleteAction)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     

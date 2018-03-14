@@ -22,6 +22,7 @@ class QuadSetupViewController: UIViewController {
         super.viewDidLoad()
 
         self.numberLabel.text = "\(patient.quads)"
+        self.quadCount = Int(patient.quads)
     }
 
     override func didReceiveMemoryWarning() {

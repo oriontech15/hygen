@@ -26,9 +26,9 @@ class ScheduleTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("FIRST LOAD VALUE: \(firstLoad)")
         if !firstLoad {
-           self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 68, 0)
         } else {
-            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 68, 0)
         }
         
         self.patientDates = PatientsController.shared.getDatesForPatients()

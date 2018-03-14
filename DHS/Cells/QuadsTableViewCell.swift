@@ -12,7 +12,7 @@ protocol QuadsCellDelegate {
     func quadsUpdated(quads: Int)
 }
 
-class QuadsTableViewCell: UITableViewCell, UITextFieldDelegate, CheckQuadsDataDelegate {
+class QuadsTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var firstLoad: Bool = true
     var changesMade: Bool = false

@@ -17,6 +17,9 @@
 		DB2BDC531F574BFE00E5DEF8 /* QuadSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BDC521F574BFE00E5DEF8 /* QuadSetupViewController.swift */; };
 		DB35B9D61EF0D6E300323250 /* RequirementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35B9D51EF0D6E300323250 /* RequirementTableViewCell.swift */; };
 		DB35B9D81EF0E8AE00323250 /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35B9D71EF0E8AE00323250 /* PatientTableViewCell.swift */; };
+		DB36693720598E2A00A56B7A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36693620598E2A00A56B7A /* ShadowView.swift */; };
+		DB3669392059931600A56B7A /* Main(v2.0).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3669382059931600A56B7A /* Main(v2.0).storyboard */; };
+		DB36693B2059994000A56B7A /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36693A2059994000A56B7A /* MaskView.swift */; };
 		DB3E49321F4286390076C9E0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E49311F4286390076C9E0 /* TextButton.swift */; };
 		DB3E49341F428F120076C9E0 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E49331F428F120076C9E0 /* RoundedBackgroundView.swift */; };
 		DB48FB8A1F2128EF00214F90 /* ScheduleMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48FB891F2128EF00214F90 /* ScheduleMainViewController.swift */; };
@@ -101,6 +104,13 @@
 		DBD1C6E21F3E3D50005DC237 /* PAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1C6E11F3E3D50005DC237 /* PAViewController.swift */; };
 		DBD1C6E41F3E631F005DC237 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1C6E31F3E631F005DC237 /* TabBarView.swift */; };
 		DBD4C7E51F56675B00A34AD8 /* AddXrayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD4C7E41F56675B00A34AD8 /* AddXrayTableViewCell.swift */; };
+		DBE56F632059B2870063D48C /* Dosis-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F5F2059B2270063D48C /* Dosis-Bold.ttf */; };
+		DBE56F642059B2870063D48C /* Dosis-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F5D2059B2250063D48C /* Dosis-ExtraBold.ttf */; };
+		DBE56F652059B2870063D48C /* Dosis-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F612059B2290063D48C /* Dosis-ExtraLight.ttf */; };
+		DBE56F662059B2870063D48C /* Dosis-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F5C2059B2240063D48C /* Dosis-Light.ttf */; };
+		DBE56F672059B2870063D48C /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F602059B2280063D48C /* Dosis-Medium.ttf */; };
+		DBE56F682059B2870063D48C /* Dosis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F5E2059B2260063D48C /* Dosis-Regular.ttf */; };
+		DBE56F692059B2870063D48C /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE56F622059B2290063D48C /* Dosis-SemiBold.ttf */; };
 		DBEC10961F2284AA00D428DE /* LeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEC10951F2284AA00D428DE /* LeftButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +125,9 @@
 		DB2BDC521F574BFE00E5DEF8 /* QuadSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadSetupViewController.swift; sourceTree = "<group>"; };
 		DB35B9D51EF0D6E300323250 /* RequirementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementTableViewCell.swift; sourceTree = "<group>"; };
 		DB35B9D71EF0E8AE00323250 /* PatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
+		DB36693620598E2A00A56B7A /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		DB3669382059931600A56B7A /* Main(v2.0).storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main(v2.0).storyboard"; sourceTree = "<group>"; };
+		DB36693A2059994000A56B7A /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		DB3E49311F4286390076C9E0 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		DB3E49331F428F120076C9E0 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
 		DB48FB891F2128EF00214F90 /* ScheduleMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMainViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +214,13 @@
 		DBD1C6E11F3E3D50005DC237 /* PAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAViewController.swift; sourceTree = "<group>"; };
 		DBD1C6E31F3E631F005DC237 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		DBD4C7E41F56675B00A34AD8 /* AddXrayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddXrayTableViewCell.swift; sourceTree = "<group>"; };
+		DBE56F5C2059B2240063D48C /* Dosis-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.ttf"; sourceTree = "<group>"; };
+		DBE56F5D2059B2250063D48C /* Dosis-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DBE56F5E2059B2260063D48C /* Dosis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Regular.ttf"; sourceTree = "<group>"; };
+		DBE56F5F2059B2270063D48C /* Dosis-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.ttf"; sourceTree = "<group>"; };
+		DBE56F602059B2280063D48C /* Dosis-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.ttf"; sourceTree = "<group>"; };
+		DBE56F612059B2290063D48C /* Dosis-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.ttf"; sourceTree = "<group>"; };
+		DBE56F622059B2290063D48C /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
 		DBEC10951F2284AA00D428DE /* LeftButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,6 +354,8 @@
 		DBD19C871EF04A560055C607 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB36693620598E2A00A56B7A /* ShadowView.swift */,
+				DB36693A2059994000A56B7A /* MaskView.swift */,
 				DB6B0E701F43892100DDDD5D /* RoundedSquareBackground.swift */,
 				DB3E49311F4286390076C9E0 /* TextButton.swift */,
 				DB8082811F4222A3006462E8 /* EmailButton.swift */,
@@ -396,6 +418,7 @@
 		DBD19C8A1EF04AA20055C607 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				DB3669382059931600A56B7A /* Main(v2.0).storyboard */,
 				DB912ED81EEAFBA200E014ED /* Main.storyboard */,
 				DB6B0E6D1F43826900DDDD5D /* OverallProgess.storyboard */,
 				DB6B0E6B1F4381FD00DDDD5D /* CreatePatient.storyboard */,
@@ -412,6 +435,13 @@
 				DBD1C6D21F3E1486005DC237 /* Comfortaa-Bold.ttf */,
 				DBD1C6D31F3E1486005DC237 /* Comfortaa-Light.ttf */,
 				DBD1C6D41F3E1486005DC237 /* Comfortaa-Regular.ttf */,
+				DBE56F5F2059B2270063D48C /* Dosis-Bold.ttf */,
+				DBE56F5D2059B2250063D48C /* Dosis-ExtraBold.ttf */,
+				DBE56F612059B2290063D48C /* Dosis-ExtraLight.ttf */,
+				DBE56F5C2059B2240063D48C /* Dosis-Light.ttf */,
+				DBE56F602059B2280063D48C /* Dosis-Medium.ttf */,
+				DBE56F5E2059B2260063D48C /* Dosis-Regular.ttf */,
+				DBE56F622059B2290063D48C /* Dosis-SemiBold.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -476,7 +506,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE56F632059B2870063D48C /* Dosis-Bold.ttf in Resources */,
+				DBE56F642059B2870063D48C /* Dosis-ExtraBold.ttf in Resources */,
+				DBE56F652059B2870063D48C /* Dosis-ExtraLight.ttf in Resources */,
+				DBE56F662059B2870063D48C /* Dosis-Light.ttf in Resources */,
+				DBE56F672059B2870063D48C /* Dosis-Medium.ttf in Resources */,
+				DBE56F682059B2870063D48C /* Dosis-Regular.ttf in Resources */,
+				DBE56F692059B2870063D48C /* Dosis-SemiBold.ttf in Resources */,
 				DBC25CEC1F47758700067EAE /* Comfortaa-Bold.ttf in Resources */,
+				DB3669392059931600A56B7A /* Main(v2.0).storyboard in Resources */,
 				DBC25CED1F47758700067EAE /* Comfortaa-Light.ttf in Resources */,
 				DBC25CEE1F47758700067EAE /* Comfortaa-Regular.ttf in Resources */,
 				DB6B0E6C1F4381FD00DDDD5D /* CreatePatient.storyboard in Resources */,
@@ -562,6 +600,7 @@
 				DB5037DE1EEEF94100A4AEE1 /* CircleProgressView.swift in Sources */,
 				DBB47B8B1EF07F29001D714A /* Extensions.swift in Sources */,
 				DBC25CF01F477C8800067EAE /* NoPatientsTableViewCell.swift in Sources */,
+				DB36693720598E2A00A56B7A /* ShadowView.swift in Sources */,
 				DBD19C8E1EF04C8D0055C607 /* UserController.swift in Sources */,
 				DB35B9D61EF0D6E300323250 /* RequirementTableViewCell.swift in Sources */,
 				DB1937CA1F5496FF00A31697 /* Requirement+CoreDataClass.swift in Sources */,
@@ -576,6 +615,7 @@
 				DB5037E81EEF030600A4AEE1 /* ClassDetailViewController.swift in Sources */,
 				DB5037F61EEF42EC00A4AEE1 /* CustomNumButton.swift in Sources */,
 				DB912EDD1EEAFBA200E014ED /* DHS.xcdatamodeld in Sources */,
+				DB36693B2059994000A56B7A /* MaskView.swift in Sources */,
 				DB2BDC4F1F574BDB00E5DEF8 /* InjectionSetupViewController.swift in Sources */,
 				DB912EF61EEB18BE00E014ED /* CustomCollectionViewLayout.swift in Sources */,
 				DB2BDC511F574BF000E5DEF8 /* CreateXrayViewController.swift in Sources */,

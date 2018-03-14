@@ -179,7 +179,7 @@ class PatientsController {
             }
         }
         
-        return patients
+        return self.sortPatientsByDate(patients: patients)
     }
     
     func getPatientsWithDate(patients: [Patient], date: NSDate) -> [Patient] {
@@ -216,9 +216,8 @@ class PatientsController {
             }
         }
         
-        self.sortedDates = dates.sorted { $0 < $1 }
-        print(self.sortedDates)
-        return self.sortedDates
+        let sortedDates = dates.sorted { $0 < $1 }
+        return sortedDates
     }
     
     func getDatesForPatients(patients: [Patient]) -> [NSDate] {
@@ -248,25 +247,22 @@ class PatientsController {
         return sortedDates
     }
     
-    func sortPatientsByDate(completion: (_ patientsDict: [String : [Patient]]) -> Void ) {
+    func sortPatientsByDate(patients: [Patient]) -> [Patient] {
         
-        var patientDict: [String : [Patient]] = [:]
+        let sortedPatients = patients.sorted { $0.dateOfAppointment < $1.dateOfAppointment }
         
-        print(self.sortedDates.count)
-        print(self.patients.count)
+//        for date in sortedDates {
+//            for patient in patients {
+//                if date == patient.dateOfAppointment {
+//                    print(date)
+//                    print(patient.firstName)
+//                    print(patient.dateOfAppointment)
+//                    patients.append(patient)
+//                }
+//                print(patients.count)
+//            }
+//        }
         
-        for date in self.sortedDates {
-            patientDict[date.toString()] = []
-            for patient in patients {
-                if date == patient.dateOfAppointment {
-                    print(date)
-                    print(patient.firstName)
-                    print(patient.dateOfAppointment)
-                    patientDict[date.toString()]?.append(patient)
-                }
-                print(patientDict[date.toString()]!.count)
-            }
-        }
-        completion(patientDict)
+        return sortedPatients
     }
 }

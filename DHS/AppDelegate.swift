@@ -19,42 +19,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        if RequirementController.shared.allRequirements.count == 10 && checkSetupState() {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProgressViewSwitcher")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-            
-            return true
-        } else {
-            if UserController.shared.currentUser == nil {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                
-                let storyboard = UIStoryboard(name: "OnBoarding", bundle: nil)
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-                
-                return true
-            } else {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                
-                let storyboard = UIStoryboard(name: "OnBoarding", bundle: nil)
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "ColorPickerView")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-                
-                return true
-            }
-        }        
+        //if RequirementController.shared.allRequirements.count == 10 && checkSetupState() {
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ProgressViewSwitcher")
+//
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//
+         return true
+//        } else {
+//            if UserController.shared.currentUser == nil {
+//                self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//                let storyboard = UIStoryboard(name: "OnBoarding", bundle: nil)
+//
+//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
+//
+//                self.window?.rootViewController = initialViewController
+//                self.window?.makeKeyAndVisible()
+//
+//                return true
+//            } else {
+//                self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//                let storyboard = UIStoryboard(name: "OnBoarding", bundle: nil)
+//
+//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "ColorPickerView")
+//
+//                self.window?.rootViewController = initialViewController
+//                self.window?.makeKeyAndVisible()
+//
+//                return true
+//            }
+//        }
     }
     
     private func checkSetupState() -> Bool {

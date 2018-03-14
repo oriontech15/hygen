@@ -19,7 +19,7 @@
 //    @IBOutlet weak var monthLabel: UILabel!
 //    @IBOutlet weak var seperatorView: RoundedView!
 //    @IBOutlet weak var tableView: UITableView!
-//        
+//    
 //    var animationFinished = true
 //    
 //    var patientsForDate: [Patient] = []
@@ -338,3 +338,4 @@
 //        calendarView.loadNextView()
 //    }
 //}
+//

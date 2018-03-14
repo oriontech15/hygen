@@ -21,19 +21,11 @@ protocol CheckAppointmentDataDelegate {
     func getData() -> NSDate?
 }
 
-protocol CheckInjectionDataDelegate {
-    func getData() -> (injectionOn: Bool, injections: Int?)
-}
-
-protocol CheckQuadsDataDelegate {
-    func getData() -> Int?
-}
-
 protocol CheckNotesDataDelegate {
     func getData() -> String?
 }
 
-class PatientDetailTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, AppointmentCellDelegate, XrayCellDelegate, InjectionsCellDelegate, QuadsCellDelegate, NotesCellDelegate, AddXrayButtonDelegate {
+class PatientDetailTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, AppointmentCellDelegate, XrayCellDelegate, NotesCellDelegate {
     
     var patient: Patient!
     
@@ -59,8 +51,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
     var appointmentDelegate: CheckAppointmentDataDelegate?
     var notesDelegate: CheckNotesDataDelegate?
     var classDelegate: CheckClassDataDelegate?
-    var injectionDelegate: CheckInjectionDataDelegate?
-    var quadsDelegate: CheckQuadsDataDelegate?
     
     var firstLoad: Bool = true
     var changesMade: Bool = false
@@ -83,24 +73,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
     var xrayType: xRayType? {
         didSet {
             print("xRayType - Updated!")
-        }
-    }
-    
-    var injections: Int? {
-        didSet {
-            print("Injections - Updated!")
-        }
-    }
-    
-    var injectionsOn: Bool? {
-        didSet {
-            print("Injections On - Updated!")
-        }
-    }
-    
-    var quads: Int? {
-        didSet {
-            print("Quads - Updated!")
         }
     }
     
@@ -165,9 +137,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
     
     var originalClass: String?
     var originalDate: NSDate?
-    var originalInjections: Int?
-    var originalInjectionsOn: Bool?
-    var originalQuads: Int?
     var originalNotes: String?
     var originalPhone: String?
     var originalEmail: String?
@@ -223,8 +192,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
             
             self.originalClass = patient.requirement.type
             self.originalDate = patient.dateOfAppointment
-            self.originalInjections = Int(patient.injections)
-            self.originalQuads = Int(patient.quads)
             self.originalNotes = patient.notes
             self.originalEmail = patient.email
             self.originalPhone = patient.phone
@@ -251,7 +218,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
             }
             
             self.date = originalDate
-            self.quads = originalQuads
             self.notes = originalNotes
             self.email = originalEmail
             self.phone = originalPhone
@@ -276,14 +242,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
                         
                         if let date = self.date {
                             PatientsController.shared.updateDateFor(patient: self.patient, date: date)
-                        }
-                        
-                        if let injections = self.injections {
-                            PatientsController.shared.updateInjectionsFor(patient: self.patient, injectionsOn: self.injectionsOn, injections: injections)
-                        }
-                        
-                        if let quads = self.quads {
-                            PatientsController.shared.updateQuadsFor(patient: self.patient, quads: quads)
                         }
                         
                         if let notes = self.notes {
@@ -392,21 +350,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         self.tableView.endUpdates()
     }
     
-    func injectionsUpdated(injectionsOn: Bool, injections: Int) {
-        self.injectionsOn = injectionsOn
-        self.injections = injections
-    }
-    
-    func injectionsOnUpdated() {
-        self.tableView.beginUpdates()
-        self.tableView.layoutIfNeeded()
-        self.tableView.endUpdates()
-    }
-    
-    func quadsUpdated(quads: Int) {
-        self.quads = quads
-    }
-    
     func notesUpdated(notes: String) {
         self.notes = notes
     }
@@ -418,10 +361,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
         self.tableView.endUpdates()
     }
     
-    func addXrayButtonTapped() {
-        self.additionalXrayCount += 1
-    }
-    
     @IBAction func saveButtonTapped() {
         self.tableView.endEditing(true)
         
@@ -431,14 +370,6 @@ class PatientDetailTableViewController: UITableViewController, MFMailComposeView
             
             if let date = self.date {
                 PatientsController.shared.updateDateFor(patient: self.patient, date: date)
-            }
-            
-            if let injections = self.injections {
-                PatientsController.shared.updateInjectionsFor(patient: self.patient, injectionsOn: self.injectionsOn, injections: injections)
-            }
-            
-            if let quads = self.quads {
-                PatientsController.shared.updateQuadsFor(patient: self.patient, quads: quads)
             }
             
             if let notes = self.notes {

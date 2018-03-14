@@ -126,21 +126,21 @@ class ProgressController {
                     } else if xray.bwx {
                         self.totalCurrentBWX += 1
                     } else if xray.pa {
-                        self.totalCurrentPA = Int64(xray.paNumber)
+                        self.totalCurrentPA += Int64(xray.paNumber)
                     }
                 }
             }
             
             switch patient.requirement.type {
             case RequirementType.class1A.rawValue:
-                self.totalCurrentClass1A = patient.quads
+                self.totalCurrentClass1A += patient.quads
                 break
             case RequirementType.class1B.rawValue:
                 print(patient.quads)
-                self.totalCurrentClass1B = patient.quads
+                self.totalCurrentClass1B += patient.quads
                 break
             case RequirementType.class2.rawValue:
-                self.totalCurrentClass2 = patient.quads
+                self.totalCurrentClass2 += patient.quads
                 break
             case RequirementType.class3.rawValue:
                 self.totalCurrentClass3_4 += patient.quads
@@ -149,7 +149,7 @@ class ProgressController {
                 self.totalCurrentClass3_4 += patient.quads
                 break
             case RequirementType.class5.rawValue:
-                self.totalCurrentClass5 = patient.quads
+                self.totalCurrentClass5 += patient.quads
                 break
             default:
                 break

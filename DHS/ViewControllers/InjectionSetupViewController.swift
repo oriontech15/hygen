@@ -22,6 +22,7 @@ class InjectionSetupViewController: UIViewController {
         super.viewDidLoad()
         
         self.numberLabel.text = "\(patient.injections)"
+        self.injectionCount = Int(patient.injections)
     }
     
     override func didReceiveMemoryWarning() {

@@ -37,7 +37,7 @@ class XraySimpleTableViewCell: UITableViewCell {
         } else if xray.bwx {
             self.xrayRequirementLabel.text = "BWX"
             self.xrayPa_SetsLabel.isHidden = false
-            self.xrayPa_SetsLabel.text = "Sets: \(xray.sets)"
+            self.xrayPa_SetsLabel.text = "Set: \(xray.sets)"
             if xray.schick {
                 self.xrayTypeLabel.text = "SCHICK"
             } else if xray.scanx {
